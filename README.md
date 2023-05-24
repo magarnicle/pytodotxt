@@ -8,7 +8,7 @@ A tiny library to access todo.txt-like task lists.
 To install pytodotxt, you can follow these steps to clone the repository,
 and install the program.
 
-    pip install pytodotxt
+    pip install git+ssh://git@github.com/magarnicle/pytodotxt.git
 
 That’s all there is to do.
 
