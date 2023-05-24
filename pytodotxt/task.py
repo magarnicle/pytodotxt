@@ -278,7 +278,7 @@ class Task:
         """
         if self._attributes is None:
             self.parse_attributes()
-        return self._attributes
+        return {att: val for att, val in  self._attributes.items() if att != "due"}
 
     @property
     def hashtags(self):
@@ -288,6 +288,15 @@ class Task:
         used by the todo.txt Android app.
         """
         return [match.group(2) for match in self.parse_tags(type(self).HASHTAG_RE)]
+
+    @property
+    def due_date(self):
+        # Update attributes
+        _ = self.attributes
+        if "due" in self._attributes:
+            return self.parse_date(self._attributes["due"][0])
+
+
 
     def __getattr__(self, name, fallback=None):
         if name.startswith('attr_'):
