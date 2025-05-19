@@ -1,6 +1,6 @@
 [project]
 name = "pytodotxt"
-version = "3.0.1M"
+version = "3.0.1"
 readme = "README.md"
 description = "Library to access todo.txt-like task lists"
 license = "MIT"
